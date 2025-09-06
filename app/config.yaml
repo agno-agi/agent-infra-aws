@@ -1,0 +1,14 @@
+chat:
+  quick_prompts:
+    web-search-agent:
+      - "What can you do?"
+      - "What is currently happening in France?"
+      - "What is the weather in Tokyo?"
+    finance-agent:
+      - "What is the latest news on the stock market?"
+      - "Give me a report on NVDA vs TSLA."
+      - "What is the latest news on Apple?"
+    agno-assist:
+      - "What can you do?"
+      - "What is the latest news on Agno?"
+      - "Tell me about Agno's AgentOS"
