@@ -23,11 +23,10 @@ infra_settings = InfraSettings(
     # image_repo="agnohq",
     # 'Name:tag' for the image
     image_name="agent-os-template",
-    image_repo="386435111151.dkr.ecr.us-east-1.amazonaws.com",
     # Build images locally
     build_images=True,
     # Push images after building
-    push_images=True,
+    # push_images=True,
     # Skip cache when building images
     skip_image_cache=False,
     # Force pull images in FROM
@@ -40,7 +39,6 @@ infra_settings = InfraSettings(
     aws_az2="us-east-1b",
     # Subnets for AWS resources
     # aws_subnet_ids=["subnet-xyz", "subnet-xyz"],
-    aws_subnet_ids=["subnet-0aebed09ea7c82a5f", "subnet-0d53d74c0bb98ac9d"],
     # Security Groups for AWS resources
     # aws_security_group_ids=["sg-xyz", "sg-xyz"],
 )

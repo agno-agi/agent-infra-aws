@@ -90,7 +90,7 @@ prd_sg = SecurityGroup(
         InboundRule(
             description="Allow traffic from LB to the FastAPI server",
             port=8000,
-            security_group_id=AwsReference(prd_lb_sg.get_security_group_id()),
+            security_group_id=AwsReference(prd_lb_sg.get_security_group_id),
         ),
     ],
     depends_on=[prd_lb_sg],
@@ -108,7 +108,7 @@ prd_db_sg = SecurityGroup(
         InboundRule(
             description="Allow traffic from apps to the database",
             port=prd_db_port,
-            security_group_id=AwsReference(prd_sg.get_security_group_id()),
+            security_group_id=AwsReference(prd_sg.get_security_group_id),
         ),
     ],
     depends_on=[prd_sg],
@@ -126,7 +126,7 @@ prd_db_subnet_group = DbSubnetGroup(
     save_output=save_output,
 )
 
-# -*- RDS Database Instance
+# # -*- RDS Database Instance
 prd_db = DbInstance(
     name=f"{infra_settings.prd_key}-db",
     group="db",

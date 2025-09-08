@@ -36,11 +36,9 @@ container_env = {
     "RUNTIME_ENV": "dev",
     # Get the OpenAI API key and Exa API key from the local environment
     "OPENAI_API_KEY": getenv("OPENAI_API_KEY"),
-    "MISTRAL_API_KEY": getenv("MISTRAL_API_KEY"),
     # Database configuration
     "DB_HOST": dev_db.get_db_host(),
-    # TODO: Look into why dev_db.get_db_port() is not working
-    "DB_PORT": 5432,
+    "DB_PORT": dev_db.get_db_port(),
     "DB_USER": dev_db.get_db_user(),
     "DB_PASS": dev_db.get_db_password(),
     "DB_DATABASE": dev_db.get_db_database(),
