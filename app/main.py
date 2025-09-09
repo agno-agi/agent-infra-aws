@@ -4,21 +4,20 @@ import asyncio
 from pathlib import Path
 
 from agno.os import AgentOS
+from fastapi.middleware.cors import CORSMiddleware
 
 from agents.agno_assist import get_agno_assist
-from agents.finance_agent import get_finance_agent
 from agents.web_agent import get_web_agent
 
 os_config_path = str(Path(__file__).parent.joinpath("config.yaml"))
 
-web_agent = get_web_agent(model_id="o3-mini")
-finance_agent = get_finance_agent(model_id="o3-mini")
-agno_assist = get_agno_assist(model_id="o3-mini")
+web_agent = get_web_agent(model_id="gpt-5")
+agno_assist = get_agno_assist(model_id="gpt-5")
 
 # Create the AgentOS
 agent_os = AgentOS(
     os_id="agentos-demo",
-    agents=[web_agent, finance_agent, agno_assist],
+    agents=[web_agent, agno_assist],
     # Configuration for the AgentOS
     config=os_config_path,
 )
