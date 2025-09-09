@@ -12,7 +12,7 @@ from db.session import db_url
 
 
 def get_agno_assist(
-    model_id: str = "gpt-4.1",
+    model_id: str = "gpt-5",
     debug_mode: bool = False,
 ) -> Agent:
     return Agent(
