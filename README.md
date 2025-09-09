@@ -62,7 +62,7 @@ Once started, you can:
 When you're done, stop the application using:
 
 ```sh
-docker compose down
+ag infra down
 ```
 
 ### Run the application in AWS:
@@ -73,15 +73,17 @@ ag infra up --env prd
 
 ### This command will create the following resources:
 
-- An ECS cluster
-- An ECS service
-- An ECS task
-- An ECS task definition
-- An ECS task security group
-- An ECS task subnet group
-- An ECS task load balancer
-- An RDS database
-- An ECR repository
+- AWS Security Groups
+- AWS Secrets
+- AWS Db Subnet Group
+- AWS RDS Instance
+- AWS Load Balancer
+- AWS Target Group
+- AWS Listener
+- AWS ECS Cluster
+- AWS ECS Service
+- AWS ECS Task
+- AWS ECS Task Definition
 
 ## Prebuilt Agents
 
@@ -145,32 +147,10 @@ To upgrade all existing dependencies to their latest compatible versions, run:
 
 ### Rebuild Docker Images
 
-Rebuild your Docker images to include the updated dependencies:
+Rebuild your Docker images to include the updated dependencies, set build_images to true in the `infra/settings.py` file and run the following command:
 
 ```sh
-docker compose up -d --build
-```
-
-## Running Tests
-
-This project comes with a set of integration tests that you can use to ensure the application is working as expected.
-
-First, start the application:
-
-```sh
-docker compose up -d
-```
-
-Then, run the tests:
-
-```sh
-pytest tests/
-```
-
-Then close the application again:
-
-```sh
-docker compose down
+ag infra up -f
 ```
 
 ## Community & Support
