@@ -18,7 +18,7 @@ from infra.settings import infra_settings
 #
 # Skip resource deletion when running `ag infra down` (set to True after initial deployment)
 skip_delete: bool = False
-# Save resource outputs to workspace/outputs
+# Save resource outputs to infra/outputs
 save_output: bool = True
 
 # -*- Production image
@@ -45,7 +45,7 @@ prd_bucket = S3Bucket(
 prd_secret = SecretsManager(
     name=f"{infra_settings.prd_key}-secrets",
     group="app",
-    # Create secret from workspace/secrets/prd_api_secrets.yml
+    # Create secret from infra/secrets/prd_api_secrets.yml
     secret_files=[infra_settings.infra_root.joinpath("infra/secrets/prd_api_secrets.yml")],
     skip_delete=skip_delete,
     save_output=save_output,
@@ -54,7 +54,7 @@ prd_secret = SecretsManager(
 prd_db_secret = SecretsManager(
     name=f"{infra_settings.prd_key}-db-secrets",
     group="db",
-    # Create secret from workspace/secrets/prd_db_secrets.yml
+    # Create secret from infra/secrets/prd_db_secrets.yml
     secret_files=[infra_settings.infra_root.joinpath("infra/secrets/prd_db_secrets.yml")],
     skip_delete=skip_delete,
     save_output=save_output,

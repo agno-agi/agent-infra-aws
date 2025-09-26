@@ -53,9 +53,9 @@ Let's explore the migration process for both development and production environm
 **Create Revision and Migrate:**
 
 ```bash
-docker exec -it agent-api alembic -c db/alembic.ini revision --autogenerate -m "Your Revision Message"
+docker exec -it agent-infra-aws alembic -c db/alembic.ini revision --autogenerate -m "Your Revision Message"
 
-docker exec -it agent-api alembic -c db/alembic.ini upgrade head
+docker exec -it agent-infra-aws alembic -c db/alembic.ini upgrade head
 ```
 
 ### Production Environment
@@ -77,8 +77,8 @@ SSH into the production container and run the migration manually:
 ```bash
 # export AWS_REGION=us-east-1
 
-ECS_CLUSTER=agent-api-prd-cluster
-SERVICE_NAME=agent-api-prd-api-service
+ECS_CLUSTER=agent-infra-aws-prd-cluster
+SERVICE_NAME=agent-infra-aws-prd-api-service
 
 TASK_ARN=$(aws ecs list-tasks --cluster $ECS_CLUSTER --service-name $SERVICE_NAME --query "taskArns[0]" --output text)
 TASK_DEF=$(aws ecs describe-tasks --cluster $ECS_CLUSTER --tasks $TASK_ARN --query "tasks[0].taskDefinitionArn" --output text)

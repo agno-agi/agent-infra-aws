@@ -5,7 +5,7 @@ from agno.infra.settings import InfraSettings
 #
 # We define infra settings using a InfraSettings object
 # these values can also be set using environment variables
-# Import them into your project using `from infra.settings import ws_settings`
+# Import them into your project using `from infra.settings import infra_settings`
 #
 infra_settings = InfraSettings(
     # Infrastructure name
@@ -15,7 +15,6 @@ infra_settings = InfraSettings(
     # -*- Infra Environments
     dev_env="dev",
     prd_env="prd",
-    # -*- Infra Keys
     # default env for `agno infra` commands
     default_env="dev",
     # -*- Image Settings
@@ -29,7 +28,7 @@ infra_settings = InfraSettings(
     # push_images=True,
     # Skip cache when building images
     skip_image_cache=False,
-    # Force pull images in FROM
+    # Force pull images
     force_pull_images=False,
     # -*- AWS settings
     # Region for AWS resources
