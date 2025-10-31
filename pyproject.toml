@@ -7,7 +7,7 @@ license-files = ["LICENSE"]
 authors = [{ name = "Agno", email = "hello@agno.com" }]
 
 dependencies = [
-  "agno==2.0.11",
+  "agno==2.2.5",
   "agno-infra==1.0.4",
   "ddgs",
   "fastapi[standard]",
@@ -18,6 +18,7 @@ dependencies = [
   "sqlalchemy",
   "docker",
   "boto3",
+  "wikipedia",
 ]
 
 [project.optional-dependencies]
