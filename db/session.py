@@ -1,9 +1,8 @@
 from typing import Generator
 
+from agno.db.postgres import PostgresDb
 from sqlalchemy.engine import Engine, create_engine
 from sqlalchemy.orm import Session, sessionmaker
-
-from agno.db.postgres import PostgresDb
 
 from db.settings import db_settings
 
@@ -14,6 +13,7 @@ db_engine: Engine = create_engine(db_url, pool_pre_ping=True)
 # Create a SessionLocal class
 # https://fastapi.tiangolo.com/tutorial/sql-databases/#create-a-sessionlocal-class
 SessionLocal: sessionmaker[Session] = sessionmaker(autocommit=False, autoflush=False, bind=db_engine)
+
 
 def get_session_db(session_table: str = "agno_sessions", knowledge_table: str = "agno_knowledge") -> PostgresDb:
     """Create a PostgresDb instance with specific table names for agent isolation."""

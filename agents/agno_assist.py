@@ -9,7 +9,7 @@ from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.vectordb.pgvector import PgVector, SearchType
 
 from app.models import OPENAI_MODEL_ID
-from db.session import get_session_db, db_url
+from db.session import db_url, get_session_db
 
 agno_assist = Agent(
     id="agno-assist",

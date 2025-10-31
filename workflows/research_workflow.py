@@ -2,7 +2,7 @@ from textwrap import dedent
 from typing import List
 
 from agno.agent.agent import Agent
-from agno.models.openai import OpenAIChat   
+from agno.models.openai import OpenAIChat
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.tools.wikipedia import WikipediaTools
 from agno.workflow.condition import Condition
@@ -12,8 +12,8 @@ from agno.workflow.types import StepInput, StepOutput, WorkflowExecutionInput
 from agno.workflow.workflow import Workflow
 from pydantic import BaseModel, Field
 
-from db.session import get_session_db
 from app.models import OPENAI_MODEL_ID
+from db.session import get_session_db
 
 
 # ************* Input Schema *************

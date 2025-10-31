@@ -505,4 +505,3 @@ investment_workflow = Workflow(
     session_state={},
     debug_mode=True,
 )
-
