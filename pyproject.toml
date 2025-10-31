@@ -49,6 +49,10 @@ exclude = [".venv*", "workflows/investment_workflow.py", "workflows/research_wor
 module = ["pgvector.*", "setuptools.*", "nest_asyncio.*", "agno.*", "requests.*"]
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = ["workflows.investment_workflow", "workflows.research_workflow"]
+ignore_errors = true
+
 [tool.uv.pip]
 no-annotate = true
 
