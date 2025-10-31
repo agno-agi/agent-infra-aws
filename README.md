@@ -4,7 +4,7 @@ Welcome to Agent OS AWS: a robust, production-ready application for serving Agen
 
 - An **AgentOS instance**: An API-based interface for production-ready Agentic Applications.
 - A **PostgreSQL database** for storing Agent sessions, knowledge, and memories.
-- A set of **pre-built Agents** to use as a starting point.
+- A set of **pre-built Agents, Teams, and Workflows** to use as a starting point.
 
 For more information, checkout [Agno](https://agno.link/gh) and give it a ⭐️
 
@@ -158,6 +158,7 @@ ag infra up -f
 Need help, have a question, or want to connect with the community?
 
 - 📚 **[Read the Agno Docs](https://docs.agno.com)** for more in-depth information.
+- 🚀 **[Read the Deployment Guide](https://docs.agno.com/deploy)** for more in-depth information.
 - 💬 **Chat with us on [Discord](https://agno.link/discord)** for live discussions.
 - ❓ **Ask a question on [Discourse](https://agno.link/community)** for community support.
 - 🐛 **[Report an Issue](https://github.com/agno-agi/agent-api/issues)** on GitHub if you find a bug or have a feature request.

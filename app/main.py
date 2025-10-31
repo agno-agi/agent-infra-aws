@@ -4,7 +4,6 @@ import asyncio
 from pathlib import Path
 
 from agno.os import AgentOS
-from fastapi.middleware.cors import CORSMiddleware
 
 from agents.agno_assist import agno_assist
 from agents.web_agent import web_agent
