@@ -304,7 +304,7 @@ async def financial_analysis_step(execution_input: WorkflowExecutionInput) -> St
        - Include publication dates and data sources
        - Provide links to financial reports and analysis
     
-    Use Python tools for quantitative analysis and DuckDuckGo search for additional financial data.
+    Use DuckDuckGo search for additional financial data.
     """
 
     result = await financial_analyst.arun(analysis_prompt)
