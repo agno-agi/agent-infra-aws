@@ -23,7 +23,7 @@ infra_settings = InfraSettings(
     # 'Name:tag' for the image
     image_name="agent-infra-aws",
     # Build images locally
-    build_images=True,
+    # build_images=True,
     # Push images after building
     # push_images=True,
     # Skip cache when building images
