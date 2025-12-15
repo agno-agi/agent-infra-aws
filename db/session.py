@@ -15,7 +15,7 @@ db_engine: Engine = create_engine(db_url, pool_pre_ping=True)
 SessionLocal: sessionmaker[Session] = sessionmaker(autocommit=False, autoflush=False, bind=db_engine)
 
 
-def get_session_db(session_table: str = "agno_sessions", knowledge_table: str = "agno_knowledge") -> PostgresDb:
+def get_postgres_db(session_table: str = "agno_sessions", knowledge_table: str = "agno_knowledge") -> PostgresDb:
     """Create a PostgresDb instance with specific table names for agent isolation."""
     return PostgresDb(db_url=db_url, id="agent-os", session_table=session_table, knowledge_table=knowledge_table)
 

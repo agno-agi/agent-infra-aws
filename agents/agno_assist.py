@@ -8,7 +8,7 @@ from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.vectordb.pgvector import PgVector, SearchType
 
 from app.models import OPENAI_EMBEDDER_MODEL_ID, OPENAI_MODEL_ID
-from db.session import db_url, get_session_db
+from db.session import db_url, get_postgres_db
 
 agno_assist = Agent(
     id="agno-assist",
@@ -75,7 +75,7 @@ agno_assist = Agent(
     # -*- Knowledge -*-
     # Add the knowledge base to the agent
     knowledge=Knowledge(
-        contents_db=get_session_db(),
+        contents_db=get_postgres_db(),
         vector_db=PgVector(
             db_url=db_url,
             table_name="agno_assist_knowledge",
@@ -87,7 +87,7 @@ agno_assist = Agent(
     search_knowledge=True,
     # -*- Storage -*-
     # Storage chat history and session state in a Postgres table
-    db=get_session_db(),
+    db=get_postgres_db(),
     # -*- History -*-
     # Send the last 3 messages from the chat history
     add_history_to_context=True,

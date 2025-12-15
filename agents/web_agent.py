@@ -5,7 +5,7 @@ from agno.models.openai import OpenAIChat
 from agno.tools.duckduckgo import DuckDuckGoTools
 
 from app.models import OPENAI_MODEL_ID
-from db.session import get_session_db
+from db.session import get_postgres_db
 
 web_agent = Agent(
     id="web-search-agent",
@@ -61,7 +61,7 @@ web_agent = Agent(
         """),
     # -*- Storage -*-
     # Storage chat history and session state in a Postgres table
-    db=get_session_db(),
+    db=get_postgres_db(),
     # -*- History -*-
     # Send the last 3 messages from the chat history
     add_history_to_context=True,

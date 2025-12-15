@@ -117,22 +117,22 @@ python -m agents.agno_assist
 
 Note: Please update the ECS cluster and the container name to match your prd resources.
 
-## Prebuilt Agents
+## Prebuilt Agents, Teams, and Workflows
 
-The `/agents` folder contains pre-built agents that you can use as a starting point.
+The `/agents` folder contains pre-built agents, teams, and workflows that you can use as a starting point.
 
-- Web Search Agent: A simple agent that can search the web.
-- Agno Assist: An Agent that can help answer questions about Agno.
+- Agno Assist: An Agent that can help answer questions about Agno and provide support for developers working with Agno.
+- Web Search Agent: A Agent that can search the web based on the user's query.
 
 The `/teams` folder contains pre-built teams that you can use as a starting point.
 
-- Multilingual Team: A team that can translate and provide cultural insights.
-- Reasoning Research Team: A team that can research and provide insights.
+- Multilingual Team: A team consisting of member agents that specialize in different languages and can translate and provide cultural insights.
+- Reasoning Research Team: A team consisting of member agents that can research and provide insights.
 
 The `/workflows` folder contains pre-built workflows that you can use as a starting point.
 
-- Investment Workflow: A workflow that can help with investment decisions.
-- Research Workflow: A workflow that can help with research.
+- Investment Workflow: A workflow that creates a comprehensive investment strategy report based on the user's request.
+- Research Workflow: A workflow that creates a comprehensive research report based on the user's request and provides a summary of the research findings.
 
 ## Development Setup
 
