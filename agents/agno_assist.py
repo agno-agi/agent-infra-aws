@@ -106,7 +106,8 @@ agno_assist = Agent(
 
 if __name__ == "__main__":
     # Add knowledge to Agno Assist agent
-    agno_assist.knowledge.add_content(
-        name="Agno Docs",
-        url="https://docs.agno.com/llms.txt",
+    if agno_assist.knowledge:
+        agno_assist.knowledge.add_content(
+            name="Agno Docs",
+            url="https://docs.agno.com/llms.txt",
     )
