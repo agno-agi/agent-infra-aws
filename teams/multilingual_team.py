@@ -27,6 +27,7 @@ japanese_specialist = Agent(
 )
 
 spanish_specialist = Agent(
+    id="spanish-language-specialist",
     name="Spanish Language Specialist",
     role="Expert in Spanish language across Latin America and Spain",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -44,6 +45,7 @@ spanish_specialist = Agent(
 )
 
 french_specialist = Agent(
+    id="french-language-specialist",
     name="French Language Specialist",
     role="Expert in French language and Francophone culture",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -61,6 +63,7 @@ french_specialist = Agent(
 )
 
 hindi_specialist = Agent(
+    id="hindi-language-specialist",
     name="Hindi Language Specialist",
     role="Expert in Hindi language and Indian business culture",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -78,6 +81,7 @@ hindi_specialist = Agent(
 )
 
 german_specialist = Agent(
+    id="german-language-specialist",
     name="German Language Specialist",
     role="Expert in German language and Germanic business culture",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -96,7 +100,7 @@ german_specialist = Agent(
 
 # ************* Multilingual Team Setup *************
 multilingual_team = Team(
-    id="multilingual-consultation-team",
+    id="multilingual-team",
     name="Professional Multilingual Consultation Team",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
     description=dedent(

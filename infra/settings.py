@@ -9,7 +9,7 @@ from agno.infra.settings import InfraSettings
 #
 infra_settings = InfraSettings(
     # Infrastructure name
-    infra_name="agent-os-template",
+    infra_name="agent-infra-aws",
     # Path to the infra root
     infra_root=Path(__file__).parent.parent.resolve(),
     # -*- Infra Environments
@@ -19,9 +19,9 @@ infra_settings = InfraSettings(
     default_env="dev",
     # -*- Image Settings
     # Repository for images
-    # image_repo="agnohq",
+    image_repo="agnohq",
     # 'Name:tag' for the image
-    image_name="agent-os-template",
+    image_name="agent-infra-aws",
     # Build images locally
     build_images=True,
     # Push images after building

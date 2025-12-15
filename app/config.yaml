@@ -8,3 +8,11 @@ chat:
       - "What can you do?"
       - "What is the latest news on Agno?"
       - "Tell me about Agno's AgentOS"
+    multilingual-team:
+      - "What can you do?"
+      - "What is the latest news on the stock market?"
+      - "Tell me about Agno's AgentOS"
+    reasoning-research-team:
+      - "What can you do?"
+      - "What is the latest news on the stock market?"
+      - "Tell me about Agno's AgentOS"

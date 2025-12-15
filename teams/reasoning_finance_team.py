@@ -11,7 +11,7 @@ from db.session import get_session_db
 
 # ************* Team Members Setup *************
 web_agent = Agent(
-    id="web_agent",
+    id="web-agent",
     name="Web Search Agent",
     role="Handle web search requests and general research",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -27,7 +27,7 @@ web_agent = Agent(
 )
 
 research_agent = Agent(
-    id="research_agent",
+    id="research-agent",
     name="Research Specialist",
     role="Advanced research and analysis using AI-powered search",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
@@ -47,7 +47,7 @@ research_agent = Agent(
 
 # ************* Reasoning Research Team Setup *************
 reasoning_research_team = Team(
-    id="reasoning_research_team",
+    id="reasoning-research-team",
     name="Advanced Research & Analysis Team",
     model=OpenAIChat(id=OPENAI_MODEL_ID),
     description="Strategic research and analysis team combining web intelligence, advanced reasoning tools, and collaborative investigation to deliver evidence-based insights with structured analysis and clear recommendations",

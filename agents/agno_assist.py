@@ -7,7 +7,7 @@ from agno.models.openai import OpenAIChat
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.vectordb.pgvector import PgVector, SearchType
 
-from app.models import OPENAI_MODEL_ID
+from app.models import OPENAI_EMBEDDER_MODEL_ID, OPENAI_MODEL_ID
 from db.session import db_url, get_session_db
 
 agno_assist = Agent(
@@ -80,7 +80,7 @@ agno_assist = Agent(
             db_url=db_url,
             table_name="agno_assist_knowledge",
             search_type=SearchType.hybrid,
-            embedder=OpenAIEmbedder(id=OPENAI_MODEL_ID),
+            embedder=OpenAIEmbedder(id=OPENAI_EMBEDDER_MODEL_ID),
         ),
     ),
     # Give the agent a tool to search the knowledge base (this is True by default but set here for clarity)
@@ -103,3 +103,10 @@ agno_assist = Agent(
     # Add the current date and time to the instructions
     add_datetime_to_context=True,
 )
+
+if __name__ == "__main__":
+    # Add knowledge to Agno Assist agent
+    agno_assist.knowledge.add_content(
+        name="Agno Docs",
+        url="https://docs.agno.com/llms.txt",
+    )

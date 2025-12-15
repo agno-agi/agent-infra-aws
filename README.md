@@ -1,4 +1,4 @@
-# Agent OS AWS
+# Agent OS AWS Template
 
 Welcome to Agent OS AWS: a robust, production-ready application for serving Agentic Applications as an API. It includes:
 
@@ -19,12 +19,12 @@ Follow these steps to get your Agent OS up and running:
 
 ```sh
 git clone https://github.com/agno-agi/agent-infra-aws.git
-cd agent-os-aws
+cd agent-infra-aws
 ```
 
 ### Configure API keys
 
-We use GPT 4.1 as the default model, please export the `OPENAI_API_KEY` environment variable to get started.
+We use GPT 5 Mini as the default model, please export the `OPENAI_API_KEY` environment variable to get started.
 
 ```sh
 export OPENAI_API_KEY="YOUR_API_KEY_HERE"
@@ -57,6 +57,14 @@ Once started, you can:
 - Connect your OS with `http://localhost:8000` as the endpoint. You can name it `AgentOS` (or any name you prefer).
 - Explore all the features of AgentOS or go straight to the Chat page to interact with your Agents.
 
+### How to load the knowledge base locally
+
+To load the knowledge base, you can use the following command:
+
+```sh
+docker exec -it agent-infra-aws-agentos python -m agents.agno_assist
+```
+
 ### Stop the application
 
 When you're done, stop the application using:
@@ -85,13 +93,46 @@ ag infra up --env prd
 - AWS ECS Task
 - AWS ECS Task Definition
 
+### How to load the knowledge base in AWS
+
+Your ECS tasks are already enabled with SSH access. SSH into the production containers using:
+
+```sh
+ECS_CLUSTER=agent-infra-aws-prd-cluster
+TASK_ARN=$(aws ecs list-tasks --cluster agent-infra-aws-prd-cluster --query "taskArns[0]" --output text)
+CONTAINER_NAME=agent-infra-aws-agentos
+
+aws ecs execute-command --cluster $ECS_CLUSTER \
+    --task $TASK_ARN \
+    --container $CONTAINER_NAME \
+    --interactive \
+    --command "zsh"
+```
+
+After SSHing into the container, run the following command to load the knowledge base:
+
+```sh
+python -m agents.agno_assist
+```
+
+Note: Please update the ECS cluster and the container name to match your prd resources.
+
 ## Prebuilt Agents
 
 The `/agents` folder contains pre-built agents that you can use as a starting point.
 
 - Web Search Agent: A simple agent that can search the web.
 - Agno Assist: An Agent that can help answer questions about Agno.
-- Finance Agent: An agent that uses the Financial Datasets API to get stock prices and financial data.
+
+The `/teams` folder contains pre-built teams that you can use as a starting point.
+
+- Multilingual Team: A team that can translate and provide cultural insights.
+- Reasoning Research Team: A team that can research and provide insights.
+
+The `/workflows` folder contains pre-built workflows that you can use as a starting point.
+
+- Investment Workflow: A workflow that can help with investment decisions.
+- Research Workflow: A workflow that can help with research.
 
 ## Development Setup
 
